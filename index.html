@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investing Funda</title>
-    <meta name="description" content="Explore the best finance and investment books, and follow Investing Funda for more insights on YouTube and Instagram.">
-    <meta name="keywords" content="Investing Funda, finance, investment, stock market, books">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,13 +15,6 @@
         .logo img {
             width: 100px;
             margin: 10px auto;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-            color: #555;
         }
         .button {
             display: block;
@@ -57,13 +47,33 @@
     </div>
     <h1>Investing Funda</h1>
     <p>Your guide to finance & investment insights! 💰</p>
-    <a class="button" href="https://amzn.to/4fWM6cd" target="_blank" rel="noopener noreferrer">Reminiscences of a Stock Operator</a>
-    <a class="button" href="https://amzn.to/40Veesd" target="_blank" rel="noopener noreferrer">Common Stocks Uncommon Profits</a>
-    <a class="button" href="https://amzn.to/49j4GcN" target="_blank" rel="noopener noreferrer">Coffee Can Investing</a>
-    <a class="button" href="https://www.youtube.com/investingfunda" target="_blank" rel="noopener noreferrer">YouTube</a>
-    <a class="button" href="https://www.instagram.com/investingfunda.pro" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <div id="links-container"></div>
     <footer>
         <p>&copy; 2024 Investing Funda. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Fetch links from the external JSON file
+        fetch('links.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not OK');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const container = document.getElementById('links-container');
+                data.links.forEach(link => {
+                    const anchor = document.createElement('a');
+                    anchor.href = link.url;
+                    anchor.target = '_blank';
+                    anchor.rel = 'noopener noreferrer';
+                    anchor.className = 'button';
+                    anchor.textContent = link.text;
+                    container.appendChild(anchor);
+                });
+            })
+            .catch(error => console.error('Error loading links:', error));
+    </script>
 </body>
 </html>
