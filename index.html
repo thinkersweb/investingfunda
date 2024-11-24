@@ -17,24 +17,32 @@
             margin: 10px auto;
         }
 
-        .button {
-            display: block;
-            margin: 10px auto;
-            padding: 15px 20px;
-            width: 80%;
-            max-width: 300px;
-            background-color: #e0e0e0;
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, background-color 0.2s;
-        }
-        .button:hover {
-            background-color: #ccc;
-            transform: scale(1.05);
-        }
+       .button {
+    display: block;
+    margin: 15px auto;
+    padding: 15px 20px;
+    width: 80%;
+    max-width: 300px;
+    background: linear-gradient(135deg, #007aff, #00c6ff); /* Gradient effect */
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px; /* Smooth rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+.button:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    opacity: 0.95; /* Slight dim effect */
+}
+.button:active {
+    transform: translateY(1px); /* Press effect */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Subtle press shadow */
+}
+
     </style>
 </head>
 <body>
